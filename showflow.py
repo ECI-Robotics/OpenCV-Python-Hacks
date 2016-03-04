@@ -59,8 +59,8 @@ if __name__=="__main__":
 
     movestep = int(options.movestep) if options.movestep else 16
 
-    flow = OpticalFlowCalculator(width, height, window_name='Optical Flow', scaledown=2, move_step=movestep)
-    #flow = OpticalFlowCalculator(width, height, window_name='Optical Flow', scaledown=scaledown, move_step=movestep)
+    flow = OpticalFlowCalculator(width, height, window_name='Optical Flow', scaledown=2, move_step=64)
+    #flow = OpticalFlowCalculator(width, height, window_name='Optical Flow', scaledown=scaledown, move_step=3)
 
     start_sec = time.time()
     count = 0

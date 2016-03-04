@@ -22,6 +22,8 @@ import math
 import optparse
 
 class OpticalFlowCalculator:
+
+
     '''
     A class for optical flow calculations using OpenCV
     '''
@@ -38,13 +40,17 @@ class OpticalFlowCalculator:
           window_name       - window name for display
           flow_color_rgb    - color for displaying flow
         '''
+        self.gui=True;
+
+        self.itCount=0;
 
         self.move_step = move_step
         self.mv_color_bgr = (flow_color_rgb[2], flow_color_rgb[1], flow_color_rgb[0])
 
         self.perspective_angle = perspective_angle
 
-        #self.window_name = window_name
+        if (self.gui):
+            self.window_name = window_name
         
         self.size = (int(frame_width/scaledown), int(frame_height/scaledown))
 
@@ -65,6 +71,9 @@ class OpticalFlowCalculator:
         frame = np.reshape(frame, (self.size[1], self.size[0], 3))
         return self.processFrame(frame, distance, timestep)
 
+
+
+
     def processFrame(self, frame, distance=None, timestep=1):
         '''
         Processes one image frame, returning summed X,Y flow and frame.
@@ -82,8 +91,11 @@ class OpticalFlowCalculator:
         xsum, ysum = 0,0
 
         xvel, yvel = 0,0
-        
+
+
+
         if self.prev_gray != None:
+
 
             leftHalfXFlowSum=0;
             leftHalfYFlowSum=0;
@@ -105,6 +117,7 @@ class OpticalFlowCalculator:
                     leftHalfXFlowSum=leftHalfXFlowSum+math.fabs(fx);
                     leftHalfYFlowSum=leftHalfYFlowSum+math.fabs(fy);
                     #cv2.line(frame2, (x,y), (int(x+fx),int(y+fy)), (0, 0, 255))
+
                     #cv2.circle(frame2, (x,y), 1, self.mv_color_bgr, -1)
 
                 for x in range((flow.shape[1]/2)+self.move_step, flow.shape[1], self.move_step):
@@ -120,7 +133,9 @@ class OpticalFlowCalculator:
                     #cv2.line(frame2, (x,y), (int(x+fx),int(y+fy)), (0, 255, 0))
                     #cv2.circle(frame2, (x,y), 1, self.mv_color_bgr, -1)
 
-                print('FlowSum: LEFT X:{0} Y:{1} - RIGHT X:{2} Y:{3}'.format(leftHalfXFlowSum,leftHalfYFlowSum,rightHalfXFlowSum,rightHalfYFlowSum));
+
+
+                print('FlowSum_{4}: LEFT X:{0} Y:{1} - RIGHT X:{2} Y:{3}'.format(leftHalfXFlowSum,leftHalfYFlowSum,rightHalfXFlowSum,rightHalfYFlowSum,self.itCount));
 
                 #if (leftHalfXFlowSum>1 or leftHalfYFlowSum>1 or rightHalfXFlowSum>1 or rightHalfYFlowSum>1):
                 #    print('Movement detected!');
@@ -128,20 +143,21 @@ class OpticalFlowCalculator:
 
 
             # Default to system time if no timestep
-            curr_time = time.time()
-            if not timestep:
-                timestep = (curr_time - self.prev_time) if self.prev_time else 1
-            self.prev_time = curr_time
+            #curr_time = time.time()
+            #if not timestep:
+            #    timestep = (curr_time - self.prev_time) if self.prev_time else 1
+            #self.prev_time = curr_time
 
-            xvel = self._get_velocity(flow, xsum, flow.shape[1], distance, timestep)
-            yvel = self._get_velocity(flow, ysum, flow.shape[0], distance, timestep)
+            #xvel = self._get_velocity(flow, xsum, flow.shape[1], distance, timestep)
+            #yvel = self._get_velocity(flow, ysum, flow.shape[0], distance, timestep)
 
         self.prev_gray = gray
 
-        #if self.window_name:
-        #    cv2.imshow(self.window_name, frame2)
-        #    if cv2.waitKey(1) & 0x000000FF== 27: # ESC
-        #        return None
+        if (self.gui):
+            if self.window_name:
+                cv2.imshow(self.window_name, frame2)
+                if cv2.waitKey(1) & 0x000000FF== 27: # ESC
+                    return None
         
        # Normalize and divide by timestep
         return  xvel, yvel, frame2

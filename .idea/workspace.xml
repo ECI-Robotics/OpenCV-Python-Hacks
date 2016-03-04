@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb7e71b4-fe5e-4c1a-9464-755b369bb098" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/OpenCV-Python-Hacks.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/optical_flow/__init__.py" afterPath="$PROJECT_DIR$/optical_flow/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showflow.py" afterPath="$PROJECT_DIR$/showflow.py" />
     </list>
@@ -34,19 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="__init__.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/optical_flow/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="29" selection-start="5152" selection-end="5152" vertical-scroll-proportion="0.0" vertical-offset="1789" max-vertical-offset="3165">
-              <folding />
+            <state line="66" column="30" selection-start="2156" selection-end="2156" vertical-scroll-proportion="0.7638889" vertical-offset="660" max-vertical-offset="3480">
+              <folding>
+                <element signature="e#641#651#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showflow.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="showflow.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/showflow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="56" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.37078652" vertical-offset="480" max-vertical-offset="1245">
+            <state line="50" column="56" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.0" vertical-offset="470" max-vertical-offset="1245">
               <folding />
             </state>
           </provider>
@@ -65,8 +59,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/optical_flow/__init__.py" />
         <option value="$PROJECT_DIR$/showflow.py" />
+        <option value="$PROJECT_DIR$/optical_flow/__init__.py" />
       </list>
     </option>
   </component>
@@ -340,17 +334,19 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/optical_flow/__init__.py">
+    <entry file="file://$PROJECT_DIR$/showflow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="29" selection-start="5152" selection-end="5152" vertical-scroll-proportion="0.0" vertical-offset="1789" max-vertical-offset="3165">
+        <state line="50" column="56" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.0" vertical-offset="470" max-vertical-offset="1245">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showflow.py">
+    <entry file="file://$PROJECT_DIR$/optical_flow/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="56" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.37078652" vertical-offset="480" max-vertical-offset="1245">
-          <folding />
+        <state line="66" column="30" selection-start="2156" selection-end="2156" vertical-scroll-proportion="0.7638889" vertical-offset="660" max-vertical-offset="3480">
+          <folding>
+            <element signature="e#641#651#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
